@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.settings">
+        		
+        <cconfiguration id="cdt.managedbuild.toolchain.gnu.cross.base.856589506">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.cross.base.856589506" moduleId="org.eclipse.cdt.core.settings" name="Default">
+                				
+                <externalSettings/>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.cross.base.856589506" name="Default" optionalBuildProperties="" parent="org.eclipse.cdt.build.core.emptycfg">
+                    					
+                    <folderInfo id="cdt.managedbuild.toolchain.gnu.cross.base.856589506.475580807" name="/" resourcePath="">
+                        						
+                        <toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.1505420216" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
+                            							
+                            <option id="cdt.managedbuild.option.gnu.cross.prefix.1704095432" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix"/>
+                            							
+                            <option id="cdt.managedbuild.option.gnu.cross.path.1411513360" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
+                            							
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.719281635" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+                            							
+                            <builder id="cdt.managedbuild.builder.gnu.cross.1833567769" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1895449115" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1698446032" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1487696020" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1440757254" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1346821943" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1478381775" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1896580089" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                                    									
+                                    <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                                    									
+                                    <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                                    								
+                                </inputType>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.archiver.1720887562" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.assembler.1965360731" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.assembler.input.885870052" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                                							
+                            </tool>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        		
+        <cconfiguration id="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086" moduleId="org.eclipse.cdt.core.settings" name="Work">
+                				
+                <externalSettings>
+                    					
+                    <externalSetting>
+                        						
+                        <entry flags="RESOLVED" kind="includePath" name="/home/s/eclipse/esp-idf/components/esp32/include/"/>
+                        						
+                        <entry flags="RESOLVED" kind="libraryPath" name="/home/s/eclipse/esp-idf/components/esp32/include"/>
+                        					
+                    </externalSetting>
+                    				
+                </externalSettings>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration artifactName="${ProjName}" buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086" name="Work" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=" parent="org.eclipse.cdt.build.core.emptycfg">
+                    					
+                    <folderInfo id="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086." name="/" resourcePath="">
+                        						
+                        <toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.2118484686" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
+                            							
+                            <option id="cdt.managedbuild.option.gnu.cross.prefix.986735131" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix"/>
+                            							
+                            <option id="cdt.managedbuild.option.gnu.cross.path.234430337" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
+                            							
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1805186163" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+                            							
+                            <builder arguments="-j4" autoBuildTarget="all" cleanBuildTarget="clean" command="make" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="cdt.managedbuild.builder.gnu.cross.2119851948" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.builder.gnu.cross">
+                                								
+                                <outputEntries>
+                                    									
+                                    <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name=""/>
+                                    								
+                                </outputEntries>
+                                							
+                            </builder>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1702239700" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+                                								
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.191014836" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/esp32/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/newlib/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/freertos/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/nvs_flash/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/driver/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/log/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/tcpip_adapter/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/lwip/include/lwip&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/vfs/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/json/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/spi_flash/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mbedtls/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/sys/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btcore/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/device/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/gki/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/hci/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/osi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/l2cap/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/smp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/api/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mdns/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/soc/esp32/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/fatfs/src&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/wear_levelling/include&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1298133874" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.684562560" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+                                								
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1620526492" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/esp32/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/newlib/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/freertos/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/nvs_flash/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/driver/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/log/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/tcpip_adapter/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/lwip/include/lwip&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/vfs/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/spi_flash/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mbedtls/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mdns/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/sys/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btcore/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/device/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/gki/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/hci/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/osi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/l2cap/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/smp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/api/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/soc/esp32/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/fatfs/src&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/wear_levelling/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/console&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.412172900" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1210272323" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1292038601" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.706006187" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                                    									
+                                    <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                                    									
+                                    <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                                    								
+                                </inputType>
+                                							
+                            </tool>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.archiver.13148454" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.assembler.105941175" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+                                								
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.1382423705" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/vfs/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/spi_flash/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/json/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mbedtls/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/bta/sys/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btcore/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/device/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/gki/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/hci/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/osi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/l2cap/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/sdp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/stack/smp/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/api/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/bt/bluedroid/btc/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/mdns/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/soc/esp32/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/fatfs/src&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/wear_levelling/include&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="cdt.managedbuild.tool.gnu.assembler.input.1110017905" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                                							
+                            </tool>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        		
+        <project id="serv.null.862598649" name="serv"/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope"/>
+    	
+    <storageModule moduleId="scannerConfiguration">
+        		
+        <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+        		
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086;cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086.;cdt.managedbuild.tool.gnu.cross.c.compiler.1702239700;cdt.managedbuild.tool.gnu.c.compiler.input.1298133874">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.856589506;cdt.managedbuild.toolchain.gnu.cross.base.856589506.475580807;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1487696020;cdt.managedbuild.tool.gnu.cpp.compiler.input.1440757254">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086;cdt.managedbuild.toolchain.gnu.cross.base.1371472518.1168063854.1343115086.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.684562560;cdt.managedbuild.tool.gnu.cpp.compiler.input.412172900">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.856589506;cdt.managedbuild.toolchain.gnu.cross.base.856589506.475580807;cdt.managedbuild.tool.gnu.cross.c.compiler.1895449115;cdt.managedbuild.tool.gnu.c.compiler.input.1698446032">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+        		
+        <buildTargets>
+            			
+            <target name="all" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+                				
+                <buildCommand>make</buildCommand>
+                				
+                <buildArguments>-j4</buildArguments>
+                				
+                <buildTarget>all</buildTarget>
+                				
+                <stopOnError>true</stopOnError>
+                				
+                <useDefaultCommand>false</useDefaultCommand>
+                				
+                <runAllBuilders>true</runAllBuilders>
+                			
+            </target>
+            			
+            <target name="flash" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+                				
+                <buildCommand>make</buildCommand>
+                				
+                <buildArguments>-j4</buildArguments>
+                				
+                <buildTarget>flash</buildTarget>
+                				
+                <stopOnError>true</stopOnError>
+                				
+                <useDefaultCommand>false</useDefaultCommand>
+                				
+                <runAllBuilders>true</runAllBuilders>
+                			
+            </target>
+            			
+            <target name="monitor" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+                				
+                <buildCommand>make</buildCommand>
+                				
+                <buildArguments/>
+                				
+                <buildTarget>monitor</buildTarget>
+                				
+                <stopOnError>true</stopOnError>
+                				
+                <useDefaultCommand>false</useDefaultCommand>
+                				
+                <runAllBuilders>true</runAllBuilders>
+                			
+            </target>
+            		
+        </buildTargets>
+        	
+    </storageModule>
+    
+</cproject>
