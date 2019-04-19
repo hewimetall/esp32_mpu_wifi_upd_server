@@ -2,76 +2,75 @@
 
 #define PORT_NUMBER 989
 
-static char tag[] = "socket_server";
+static char TAG[] = "socket_server";
+ void socket_server(void *pvParameters)
+{
+    char rx_buffer[128];
+    char addr_str[128];
+    int addr_family;
+    int ip_protocol;
 
-void socket_server(void *ignore) {
-	ESP_LOGI(tag, "socket start ");
+    while (1) {
+        struct sockaddr_in dest_addr;
+        dest_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+        dest_addr.sin_family = AF_INET;
+        dest_addr.sin_port = htons(PORT_NUMBER);
+        addr_family = AF_INET;
+        ip_protocol = IPPROTO_IP;
+        inet_ntoa_r(dest_addr.sin_addr, addr_str, sizeof(addr_str) - 1);
 
-	struct sockaddr_in clientAddress;
-	struct sockaddr_in serverAddress;
+        int sock = socket(addr_family, SOCK_DGRAM, ip_protocol);
+        if (sock < 0) {
+            ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
+            break;
+        }
+        ESP_LOGI(TAG, "Socket created");
 
-	// Create a socket that we will listen upon.
-	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (sock < 0) {
-		ESP_LOGE(tag, "socket: %d %s", sock, strerror(errno));
-		goto END;
-	}
-	ESP_LOGI(tag, "Create a socket that we will listen upon ");
+        int err = bind(sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
+        if (err < 0) {
+            ESP_LOGE(TAG, "Socket unable to bind: errno %d", errno);
+        }
+        ESP_LOGI(TAG, "Socket bound, port %d", PORT_NUMBER);
 
-	// Bind our server socket to a port.
-	serverAddress.sin_family = AF_INET;
-	serverAddress.sin_addr.s_addr = htonl(INADDR_ANY);//The ip state
-	serverAddress.sin_port = htons(PORT_NUMBER);
+        while (1) {
 
-	int rc  = bind(sock, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
-	printf("%i",serverAddress.sin_addr.s_addr);
-	if (rc < 0) {
-		ESP_LOGE(tag, "bind: %d %s", rc, strerror(errno));
-		goto END;
-	}
-	ESP_LOGI(tag, "Bind our server socket to a port %d",INADDR_ANY);
+            ESP_LOGI(TAG, "Waiting for data");
+            struct sockaddr_in6 source_addr;
+            socklen_t socklen = sizeof(source_addr);
+            int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&source_addr, &socklen);
 
-	// Flag the socket as listening for new connections.
-	rc = listen(sock, 5);
-	if (rc < 0) {
-		ESP_LOGE(tag, "listen: %d %s", rc, strerror(errno));
-		goto END;
-	}
-	ESP_LOGI(tag, "Flag the socket as listening for new connections ");
+            // Error occurred during receiving
+            if (len < 0) {
+                ESP_LOGE(TAG, "recvfrom failed: errno %d", errno);
+                break;
+            }
+            // Data received
+            else {
+                // Get the sender's ip address as string
+                if (source_addr.sin6_family == PF_INET) {
+                    inet_ntoa_r(((struct sockaddr_in *)&source_addr)->sin_addr.s_addr, addr_str, sizeof(addr_str) - 1);
+                } else if (source_addr.sin6_family == PF_INET6) {
+                    inet6_ntoa_r(source_addr.sin6_addr, addr_str, sizeof(addr_str) - 1);
+                }
 
-	while (1) {
-		// Listen for a new client connection.
-		socklen_t clientAddressLength = sizeof(clientAddress);
-		int clientSock = accept(sock, (struct sockaddr *)&clientAddress, &clientAddressLength);
-		if (clientSock < 0) {
-			ESP_LOGE(tag, "accept: %d %s", clientSock, strerror(errno));
-			goto END;
-		}
+                rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+                ESP_LOGI(TAG, "Received %d bytes from %s:", len, addr_str);
+                ESP_LOGI(TAG, "%s", rx_buffer);
 
-		// We now have a new client ...
-		int total =	10*1024;
-		int sizeUsed = 0;
-		char *data = malloc(total);
+                int err = sendto(sock, rx_buffer, len, 0, (struct sockaddr *)&source_addr, sizeof(source_addr));
+                if (err < 0) {
+                    ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+                    break;
+                }
+            }
+        }
 
-		// Loop reading data.
-		while(1) {
-			ssize_t sizeRead = recv(clientSock, data + sizeUsed, total-sizeUsed, 0);
-			if (sizeRead < 0) {
-				ESP_LOGE(tag, "recv: %d %s", sizeRead, strerror(errno));
-				goto END;
-			}
-			if (sizeRead == 0) {
-				break;
-			}
-			sizeUsed += sizeRead;
-		}
-
-		// Finished reading data.
-		ESP_LOGD(tag, "Data read (size: %d) was: %.*s", sizeUsed, sizeUsed, data);
-		free(data);
-		close(clientSock);
-	}
-	END:
-	vTaskDelete(NULL);
+        if (sock != -1) {
+            ESP_LOGE(TAG, "Shutting down socket and restarting...");
+            shutdown(sock, 0);
+            close(sock);
+        }
+    }
+    vTaskDelete(NULL);
 }
 

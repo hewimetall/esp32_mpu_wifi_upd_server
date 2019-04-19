@@ -1,6 +1,6 @@
 #include "head.h"
 static char TAG[] = "access-point";
-extern void socket_server(void *ignore) ;
+extern  void socket_server(void *pvParameters);
 esp_err_t esp32_wifi_eventHandler(void *ctx, system_event_t *event) {
 	// Your event handling code here...
     switch (event->event_id) {
@@ -8,14 +8,13 @@ esp_err_t esp32_wifi_eventHandler(void *ctx, system_event_t *event) {
 			ESP_LOGE(TAG, "evente SYSTEM_EVENT_AP_START");
 		break;
     	    default:
+    	    	ESP_LOGW(TAG, "evente default");
     	        break;
     }
 	return ESP_OK;
 }
 
 void access_point_task(void *ignore) {
-	nvs_flash_init();
-	tcpip_adapter_init();
 
 	ESP_ERROR_CHECK( esp_event_loop_init(esp32_wifi_eventHandler, NULL) );
 
