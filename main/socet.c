@@ -1,8 +1,9 @@
 #include "head.h"
 
-#define PORT_NUMBER 989
-
 static char TAG[] = "socket_server";
+static int sock;
+static struct sockaddr_in source_addr;
+
  void socket_server(void *pvParameters)
 {
     char rx_buffer[128];
@@ -11,6 +12,7 @@ static char TAG[] = "socket_server";
     int ip_protocol;
 
     while (1) {
+        // Filling server information
         struct sockaddr_in dest_addr;
         dest_addr.sin_addr.s_addr = htonl(INADDR_ANY);
         dest_addr.sin_family = AF_INET;
@@ -19,7 +21,7 @@ static char TAG[] = "socket_server";
         ip_protocol = IPPROTO_IP;
         inet_ntoa_r(dest_addr.sin_addr, addr_str, sizeof(addr_str) - 1);
 
-        int sock = socket(addr_family, SOCK_DGRAM, ip_protocol);
+         sock = socket(addr_family, SOCK_DGRAM, ip_protocol);
         if (sock < 0) {
             ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
             break;
@@ -34,34 +36,51 @@ static char TAG[] = "socket_server";
 
         while (1) {
 
-            ESP_LOGI(TAG, "Waiting for data");
-            struct sockaddr_in6 source_addr;
-            socklen_t socklen = sizeof(source_addr);
-            int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&source_addr, &socklen);
+                      socklen_t socklen = sizeof(source_addr);
+           /* get Socet_Client via recvfrom in source_addr*/
+            int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0,(struct sockaddr *)&source_addr, &socklen);
 
-            // Error occurred during receiving
-            if (len < 0) {
-                ESP_LOGE(TAG, "recvfrom failed: errno %d", errno);
-                break;
+            if(rx_buffer[0]=='s'  &&  rx_buffer[1]=='t' )
+            {
+				rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+
+            	ESP_LOGI(TAG, "start 1");
+            	for(int j=0 ;j<1000;j++){
+					for(int i=32;i<34;i++){
+						rx_buffer[0]=i;
+						rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+						int err = sendto(sock, rx_buffer, len, 0, (struct sockaddr *)&source_addr, sizeof(source_addr));
+						vTaskDelay(10/ portTICK_PERIOD_MS);
+						if (err < 0) {
+							ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+							break;
+						}
+					}
+            	}
+            	ESP_LOGI(TAG, "end 1");
+
             }
-            // Data received
-            else {
-                // Get the sender's ip address as string
-                if (source_addr.sin6_family == PF_INET) {
-                    inet_ntoa_r(((struct sockaddr_in *)&source_addr)->sin_addr.s_addr, addr_str, sizeof(addr_str) - 1);
-                } else if (source_addr.sin6_family == PF_INET6) {
-                    inet6_ntoa_r(source_addr.sin6_addr, addr_str, sizeof(addr_str) - 1);
-                }
+            else{
+				// Error occurred during receiving
+				if (len < 0) {
+					ESP_LOGE(TAG, "recv failed: errno %d", errno);
+					break;
+				}
+				// Data received
+				else {
 
-                rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
-                ESP_LOGI(TAG, "Received %d bytes from %s:", len, addr_str);
-                ESP_LOGI(TAG, "%s", rx_buffer);
-
-                int err = sendto(sock, rx_buffer, len, 0, (struct sockaddr *)&source_addr, sizeof(source_addr));
-                if (err < 0) {
-                    ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-                    break;
-                }
+					rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+					ESP_LOGI(TAG, "Received %d bytes from %s:", len, addr_str);
+					ESP_LOGI(TAG, "%s", rx_buffer);
+					for(int i=0;i<2;i++){
+						int err = sendto(sock, rx_buffer, len, 0, (struct sockaddr *)&source_addr, sizeof(source_addr));
+					//	vTaskDelay(10 / portTICK_PERIOD_MS);
+						if (err < 0) {
+							ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+							break;
+						}
+					}
+				}
             }
         }
 

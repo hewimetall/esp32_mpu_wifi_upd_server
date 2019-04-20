@@ -26,6 +26,8 @@
 
 //////////////////////////////////////////////////////////////////////////////////////
 /* WIFI  Block*/
+#define PORT_NUMBER 989
+
 #define SSID  "ESP32_TESTAP"
 #define PASS ""
 #define TIP_WIFI_AUTH_OPEN WIFI_AUTH_OPEN
