@@ -6,10 +6,20 @@ static struct sockaddr_in source_addr;
 
  void socket_server(void *pvParameters)
 {
+	 struct data mess;
+
     char rx_buffer[128];
     char addr_str[128];
     int addr_family;
     int ip_protocol;
+	EventBits_t  EventBits;
+	EventBits = xEventGroupWaitBits(
+	            wifi_group,   /* The event group being tested. */
+	            BIT_0, /* The bits within the event group to wait for. */
+	            pdTRUE,        /* BIT_0 & BIT_4 should be cleared before returning. */
+	            pdFALSE,       /* Don't wait for both bits, either bit will do. */
+				portMAX_DELAY );/* Wait a maximum of 100ms for either bit to be set. */
+    ESP_LOGI(TAG, "Socket Start" );
 
     while (1) {
         // Filling server information
@@ -27,6 +37,11 @@ static struct sockaddr_in source_addr;
             break;
         }
         ESP_LOGI(TAG, "Socket created");
+/////////////////////////////////////////////////////////////////////////////////////////////
+        xEventGroupSetBits(
+                           wifi_group,    // The event group being updated.
+                           BIT_1 );// The bits being set.
+/////////////////////////////////////////////////////////////////////////////////////////////
 
         int err = bind(sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
         if (err < 0) {
@@ -36,7 +51,7 @@ static struct sockaddr_in source_addr;
 
         while (1) {
 
-                      socklen_t socklen = sizeof(source_addr);
+             socklen_t socklen = sizeof(source_addr);
            /* get Socet_Client via recvfrom in source_addr*/
             int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0,(struct sockaddr *)&source_addr, &socklen);
 

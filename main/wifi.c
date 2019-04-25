@@ -1,9 +1,16 @@
+/*
+ * This file is responsible for :
+ * creation and operation of the access point
+ * event for WIFI
+ * is function access_point_task creating  task socket_server
+ * socket_server is responsible for creating and maintaining incoming connections
+ */
 #include "head.h"
 static char TAG[] = "access-point";
 extern  void socket_server(void *pvParameters);
+
 esp_err_t esp32_wifi_eventHandler(void *ctx, system_event_t *event) {
-	// Your event handling code here...
-    switch (event->event_id) {
+	switch (event->event_id) {
     	case SYSTEM_EVENT_AP_START:
 			ESP_LOGE(TAG, "evente SYSTEM_EVENT_AP_START");
 		break;
@@ -14,7 +21,9 @@ esp_err_t esp32_wifi_eventHandler(void *ctx, system_event_t *event) {
 	return ESP_OK;
 }
 
+/* Configure and run Access Point */
 void access_point_task(void *ignore) {
+    ESP_LOGI(TAG, "access_point_task Start" );
 
 	ESP_ERROR_CHECK( esp_event_loop_init(esp32_wifi_eventHandler, NULL) );
 
@@ -38,6 +47,9 @@ void access_point_task(void *ignore) {
 	ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_AP, &apConfig) );
 
 	ESP_ERROR_CHECK( esp_wifi_start() );
-    xTaskCreate( socket_server, "udp_server", 4096, NULL, 5, NULL);
-vTaskDelete(NULL);
+    xEventGroupSetBits(
+                       wifi_group,    // The event group being updated.
+                       BIT_0 );// The bits being set.
+    ESP_LOGI(TAG, "access_point_task END" );
+    vTaskDelete(NULL);
 }

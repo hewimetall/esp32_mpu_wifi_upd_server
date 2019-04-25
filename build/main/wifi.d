@@ -133,12 +133,12 @@ wifi.o: /home/s/eclipse-workspace/Serv/main/wifi.c \
  /home/s/eclipse/esp-idf/components/nvs_flash/include/nvs.h \
  /home/s/eclipse/esp-idf/components/spi_flash/include/esp_partition.h \
  /home/s/eclipse/esp-idf/components/spi_flash/include/esp_spi_flash.h \
+ /home/s/eclipse/esp-idf/components/newlib/include/string.h \
+ /home/s/eclipse/esp-idf/components/newlib/include/sys/string.h \
  /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
  /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
  /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
- /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
- /home/s/eclipse/esp-idf/components/newlib/include/string.h \
- /home/s/eclipse/esp-idf/components/newlib/include/sys/string.h
+ /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/errno.h
 
 /home/s/eclipse-workspace/Serv/main/head.h:
 
@@ -408,6 +408,10 @@ wifi.o: /home/s/eclipse-workspace/Serv/main/wifi.c \
 
 /home/s/eclipse/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
+/home/s/eclipse/esp-idf/components/newlib/include/string.h:
+
+/home/s/eclipse/esp-idf/components/newlib/include/sys/string.h:
+
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
 
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/err.h:
@@ -415,8 +419,4 @@ wifi.o: /home/s/eclipse-workspace/Serv/main/wifi.c \
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
 
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
-
-/home/s/eclipse/esp-idf/components/newlib/include/string.h:
-
-/home/s/eclipse/esp-idf/components/newlib/include/sys/string.h:
 /home/s/eclipse-workspace/Serv/main/./wifi.c:

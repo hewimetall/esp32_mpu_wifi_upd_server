@@ -1,4 +1,4 @@
-socet.o: /home/s/eclipse-workspace/Serv/main/socet.c \
+fr_1.o: /home/s/eclipse-workspace/Serv/main/fr_1.c \
  /home/s/eclipse-workspace/Serv/main/head.h \
  /home/s/eclipse/esp-idf/components/esp_event/include/esp_event.h \
  /home/s/eclipse/esp-idf/components/esp32/include/esp_err.h \
@@ -419,4 +419,4 @@ socet.o: /home/s/eclipse-workspace/Serv/main/socet.c \
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
 
 /home/s/eclipse/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
-/home/s/eclipse-workspace/Serv/main/./socet.c:
+/home/s/eclipse-workspace/Serv/main/./fr_1.c:
